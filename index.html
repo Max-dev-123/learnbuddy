@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!doctype html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="utf-8" /&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;LearnBuddy — AI Teacher&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>:root{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>--bg:#0b1220;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>--panel:#121b2e;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>--text:#eaf0ff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>--muted:#b9c6ff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>--accent:#6ee7ff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>--accent2:#a78bfa;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>body{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin:0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background: radial-gradient(1200px 600px at 20% 10%, #1a2a5a, var(--bg));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: var(--text);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>header{ padding: 22px 16px; text-align:center; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>h1{ margin: 8px 0 6px; font-size: 34px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>p{ margin: 0 auto; max-width: 850px; color: var(--muted); line-height:1.5; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.wrap{ max-width: 1100px; margin: 0 auto; padding: 14px 16px 26px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.row{ display:grid; grid-template-columns: 1.1fr .9fr; gap: 14px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>@media (max-width: 900px){ .row{ grid-template-columns: 1fr; } }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.card{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(255,255,255,.12);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border-radius: 16px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>padding: 14px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>box-shadow: 0 10px 30px rgba(0,0,0,.25);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.titleRow{ display:flex; align-items:center; justify-content:space-between; gap: 10px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.badge{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>display:inline-block;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>padding:6px 10px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border:1px solid rgba(255,255,255,.2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border-radius:999px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: var(--muted);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,.06);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 13px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>white-space: nowrap;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>select, input{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>width:100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>padding: 10px 12px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border-radius: 12px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(255,255,255,.16);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background: rgba(0,0,0,.2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: var(--text);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>outline: none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>button{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border:0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>padding: 10px 12px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border-radius: 12px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>cursor:pointer;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-weight: 800;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background: linear-gradient(90deg, var(--accent), var(--accent2));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color:#081021;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.grid2{ display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>@media (max-width: 520px){ .grid2{ grid-template-columns: 1fr; } }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>ol{ margin: 10px 0 0 20px; color: var(--text); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>li{ margin: 8px 0; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.muted{ color: var(--muted); }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.chat{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>display:flex; flex-direction: column; gap: 10px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>max-height: 440px; overflow:auto; padding-right: 4px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.msg{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>padding: 10px 12px; border-radius: 14px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(255,255,255,.12);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.ai{ background: rgba(110,231,255,.08); border-color: rgba(110,231,255,.25); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.kid{ background: rgba(167,139,250,.08); border-color: rgba(167,139,250,.25); align-self:flex-end; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.small{ font-size: 13px; color: rgba(234,240,255,.75); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.footerNote{ text-align:center; margin-top: 14px; font-size: 13px; color: rgba(234,240,255,.65); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.pill{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>display:inline-block;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>padding: 2px 10px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border-radius: 999px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(255,255,255,.18);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin-right: 6px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 12px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: rgba(234,240,255,.85);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,.05);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>b{ color: var(--text); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;header&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;span class="badge"&gt;LearnBuddy — Grade 8 Math Tutor&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h1&gt;LearnBuddy&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;Learn step-by-step — no stress.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/header&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;main class="wrap"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="row"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;!-- LESSON PLAN --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;section class="card"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="titleRow"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h2 style="margin:0;"&gt;Lesson Plan&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;span class="badge" id="difficultyBadge"&gt;Difficulty: ★★☆☆☆&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="grid2" style="margin-top:10px;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;label class="small"&gt;Choose a lesson&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;select id="lessonSelect" onchange="loadLesson()"&gt;&lt;/select&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;label class="small"&gt;Lesson goal&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="goalBox" class="msg ai" style="margin-top:6px;"&gt;—&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div style="margin-top:10px;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="pill" id="timePill"&gt;Time: —&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="pill" id="skillsPill"&gt;Skills: —&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h3 style="margin:12px 0 6px;"&gt;Steps&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;ol id="stepsList"&gt;&lt;/ol&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h3 style="margin:14px 0 6px;"&gt;Practice question&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div id="practiceBox" class="msg ai"&gt;—&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="grid2" style="margin-top:10px;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;button onclick="teacherHint()"&gt;Get a hint&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;button onclick="resetChat()"&gt;Reset chat&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p class="muted" style="margin-top:10px;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>Rule: the teacher gives hints first, not instant answers.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p class="muted" style="margin-top:6px;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>You can type &lt;b&gt;SHOW ANSWER&lt;/b&gt; after 6 hints.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;!-- CHAT --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;section class="card"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="titleRow"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h2 style="margin:0;"&gt;Chat with LearnBuddy&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;span class="badge"&gt;Safe + Friendly&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div id="chat" class="chat" style="margin-top:10px;"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="grid2" style="margin-top:10px;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;input id="kidInput" placeholder="Type your answer or question..." onkeydown="if(event.key==='Enter'){sendKid();}" /&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;button onclick="sendKid()"&gt;Send&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p class="footerNote"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>Tip: Try answering the practice question. The teacher will guide you step-by-step.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/main&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// SETTINGS</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const teacherSettings = { maxHintsBeforeAnswer: 6 };</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// DAY 1: EQUATIONS ONLY</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const lessons = [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>id: "eq1",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>title: "One-step Equations (Long Lesson)",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>difficulty: 2,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>time: "25–35 min",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>skills: "Undo one operation",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>goal: "Solve one-step equations like x + 7 = 19 and check your answer.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>steps: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Find the variable (like x).",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Decide what operation is happening to x (plus, minus, times, divide).",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Undo that operation on BOTH sides of the equation.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Simplify.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Check by substituting your answer back into the original equation.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Explain your steps in a sentence."</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>practice: "Solve: x − 9 = 14",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>hints: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"What operation is happening to x here: subtract 9 or add 9?",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"To undo “− 9”, do the opposite: add 9.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Add 9 to BOTH sides: x − 9 + 9 = 14 + 9.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"What does −9 + 9 become?",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Now compute 14 + 9.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Check: does your x value make x − 9 equal 14?"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>finalAnswer: "Add 9 to both sides: x = 23. Check: 23 − 9 = 14 ✅",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>coach: (msg) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>const t = msg.toLowerCase();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>if (t.includes("subtract 9")) return "Careful—if the equation is x − 9 = 14, what’s the opposite of −9?";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>if (t.includes("add 9")) return "Yes. What is 14 + 9?";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>if (t.includes("23")) return "Nice. Now check: 23 − 9 = ?";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>if (t.includes("14")) return "Great check! Explain: what did you do to both sides first?";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>return "Tell me: what operation is being done to x (−9, +9, ×, or ÷)?";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>},</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>id: "eq2",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>title: "Two-step Equations (Long Lesson)",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>difficulty: 3,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>time: "30–40 min",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>skills: "Undo two operations",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>goal: "Solve equations like 3x + 7 = 22 using reverse operations and checking.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>steps: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Circle the term with x (like 3x).",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Undo addition/subtraction first.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Then undo multiplication/division.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Write one line per step so it’s easy to follow.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Check your answer by substituting back in.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Try a second question to confirm you can repeat the process."</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>practice: "Solve: 4x + 6 = 30",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>hints: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"What should you undo first: +6 or ×4?",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Undo +6 by subtracting 6 from BOTH sides.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"30 − 6 = 24, so now you have 4x = 24.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Now undo ×4 by dividing BOTH sides by 4.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"24 ÷ 4 = 6, so x = 6.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Check: does 4(6) + 6 equal 30?"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>finalAnswer: "Subtract 6: 4x = 24. Divide by 4: x = 6. Check: 4(6)+6=30 ✅",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>coach: (msg) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>const t = msg.toLowerCase();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>if (t.includes("divide first")) return "Try undoing the +6 first. What’s the opposite of +6?";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>if (t.includes("subtract 6")) return "Good—what is 30 − 6?";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>if (t.includes("24")) return "Nice. Now you have 4x = 24. What’s next?";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>if (t.includes("divide by 4")) return "Yes—what is 24 ÷ 4?";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>if (t.includes("6")) return "If x = 6, do the check: 4(6)+6 = ?";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>return "What’s your first move: subtract 6 or divide by 4? (Pick one.)";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>},</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>id: "eq3",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>title: "Multi-step Equations (Long Lesson)",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>difficulty: 4,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>time: "40–55 min",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>skills: "Combine like terms, then solve",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>goal: "Solve equations like 2x + 5x − 4 = 24 by combining like terms first.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>steps: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Simplify each side: combine like terms (x terms with x terms, numbers with numbers).",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"If there are parentheses, expand them (distribute) first.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"After simplifying, solve using the two-step equation method.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Keep your work lined up to avoid mistakes.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Check your answer in the ORIGINAL equation (not the simplified one only).",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Explain where each number came from."</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>practice: "Solve: 2x + 5x − 4 = 24",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>hints: [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Which terms are like terms: 2x and 5x, or 5x and −4?",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Combine 2x + 5x to make a single term.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Now you should have something like 7x − 4 = 24.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Undo −4 by adding 4 to both sides: 24 + 4 = 28.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"Now you have 7x = 28. Undo ×7 by dividing by 7.",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>"28 ÷ 7 = 4. Check in the original: 2(4)+5(4)−4 = ?"</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>finalAnswer: "Combine: 2x+5x=7x → 7x−4=24. Add 4: 7x=28. Divide by 7: x=4. Check: 8+20−4=24 ✅",</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>coach: (msg) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>const t = msg.toLowerCase();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>if (t.includes("7x - 4")) return "Great simplification. What should you do to undo −4?";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>if (t.includes("add 4")) return "Yes—what is 24 + 4?";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>if (t.includes("28")) return "Nice. Now you have 7x = 28. What next?";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>if (t.includes("divide by 7")) return "Good—what is 28 ÷ 7?";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>if (t.includes("4")) return "If x = 4, do the full check: 2(4)+5(4)−4 = ?";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>return "First step: can you combine 2x + 5x? What do you get?";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// APP STATE</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>let current = lessons[0];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>let hintCount = 0;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// INIT</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function init(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const sel = document.getElementById("lessonSelect");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>sel.innerHTML = lessons.map(l =&gt; `&lt;option value="${l.id}"&gt;${l.title}&lt;/option&gt;`).join("");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>loadLesson();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function loadLesson(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const id = document.getElementById("lessonSelect").value;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>current = lessons.find(l =&gt; l.id === id) || lessons[0];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>hintCount = 0;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById("goalBox").textContent = current.goal;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById("timePill").textContent = `Time: ${current.time}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById("skillsPill").textContent = `Skills: ${current.skills}`;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const diff = "★".repeat(current.difficulty) + "☆".repeat(5-current.difficulty);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById("difficultyBadge").textContent = `Difficulty: ${diff}`;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const steps = document.getElementById("stepsList");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>steps.innerHTML = current.steps.map(s =&gt; `&lt;li&gt;${s}&lt;/li&gt;`).join("");</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById("practiceBox").textContent = current.practice;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>resetChat(true);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>addAI(`New lesson loaded: "${current.title}". What’s your first step?`);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// CHAT UI</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function addAI(text){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const chat = document.getElementById("chat");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const div = document.createElement("div");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>div.className = "msg ai";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>div.textContent = text;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>chat.appendChild(div);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>chat.scrollTop = chat.scrollHeight;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function addKid(text){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const chat = document.getElementById("chat");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const div = document.createElement("div");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>div.className = "msg kid";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>div.textContent = text;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>chat.appendChild(div);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>chat.scrollTop = chat.scrollHeight;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>// HINTS (B style: many hints, answer only after 6)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function teacherHint(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const hints = current.hints || [];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (hints.length === 0){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>addAI("Hint: Tell me what step you tried so far, and I’ll guide you.");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const i = Math.min(hintCount, hints.length - 1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>addAI("Hint " + (hintCount + 1) + ": " + hints[i]);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>hintCount++;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (hintCount &gt;= teacherSettings.maxHintsBeforeAnswer){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>addAI('You’ve used lots of hints. If you want, type: SHOW ANSWER');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function sendKid(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const input = document.getElementById("kidInput");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const msg = input.value.trim();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if(!msg) return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>input.value = "";</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>addKid(msg);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const t = msg.toLowerCase();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (t === "show answer" || t === "show the answer"){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (hintCount &gt;= teacherSettings.maxHintsBeforeAnswer){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>addAI("Final answer (with steps): " + (current.finalAnswer || "No finalAnswer found for this lesson."));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>addAI(`Not yet—try a few more hints first. You’ve used ${hintCount}/${teacherSettings.maxHintsBeforeAnswer}.`);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>addAI(current.coach ? current.coach(msg) : "Tell me what you tried so far.");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function resetChat(silent){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const chat = document.getElementById("chat");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>chat.innerHTML = "";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>hintCount = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if(!silent){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>addAI("Chat reset. Start by reading the practice question and telling me your first step.");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>init();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
